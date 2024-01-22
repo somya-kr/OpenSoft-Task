@@ -1,11 +1,8 @@
-$background-colour: #000f45;
-$secondary-colour: #322f68;
-$accent: #635d8c;
-$primary-colour:#c194ff;
+@use 'base';
 
 body{
-    background-color: $background-colour;
-    color: $primary-colour;
+    background-color: base.$background-color;
+    color: base.$primary-color;
     margin: 0;
     padding: 0;
 }

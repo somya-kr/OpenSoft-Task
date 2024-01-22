@@ -1,7 +1,7 @@
 import '../styles/global.scss'
 import {Archivo} from 'next/font/google'
 
-import Navbar from '../compoments/navbar'
+import Navbar from '../components/navbar'
 
 const archivo= Archivo({
   subsets: ['latin'],
