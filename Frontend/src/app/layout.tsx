@@ -1,6 +1,8 @@
 import '../styles/global.scss'
 import {Archivo} from 'next/font/google'
 
+import Navbar from '../compoments/navbar'
+
 const archivo= Archivo({
   subsets: ['latin'],
 })
@@ -12,7 +14,10 @@ export default function RootLayout({
   }) {
     return (
       <html lang="en">
-        <body className={archivo.className}>{children}</body>
+        <body className={archivo.className}>
+          <Navbar logged_in={false}/>
+          {children}
+          </body>
       </html>
     )
   }
