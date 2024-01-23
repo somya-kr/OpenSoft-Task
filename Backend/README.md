@@ -14,7 +14,6 @@ project_root
 │   ├── config.py
 │   ├── db.py
 │   ├── main.py
-│   ├── models.py
 │   ├── __init__.py
 │   └── schemas.py
 ├── .env
@@ -45,7 +44,7 @@ project_root
         <ul>
           <li><code>JWT_KEY</code>: Enter a secure key for encoding and decoding JSON Web Tokens.</li>
           <li><code>CORS_ORIGINS</code>: Define the allowed origins for Cross-Origin Resource Sharing. Use <code>*</code> for allowing all origins in a development environment.</li>
-          <li><code>DATABASE_URL</code>: Input the connection URI for your Postgres DB.</li>
+          <li><code>DATABASE_URL</code>: Input the connection URI for your MongoDB Instance</li>
         </ul>
       </li>
     </ul>
@@ -61,3 +60,39 @@ project_root
 <br />
 <br />
 
+
+## Usage
+
+- **User SignUp**:
+  Endpoint: `POST /signup`
+
+  Payload:
+  
+  ```json5
+  {
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "password": "your_password"
+  }
+  ```
+
+- **User Login**:
+  Endpoint: `POST /login`
+
+  Payload:
+
+  ```json5
+  {
+    "email": "johndoe@example.com",
+    "password": "your_password"
+  }
+  ```
+
+  Response:
+
+  ```json5
+  {
+    "status": "success",
+    "token" : "jwt_token"
+  }
+  ```
