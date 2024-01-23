@@ -1,30 +1,13 @@
-from sqlalchemy import create_engine, text
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from pymongo import mongo_client
 from src.config import config
-from src.models import Base
+from motor.motor_asyncio import AsyncIOMotorClient
 
-engine = create_engine(config['DATABASE_URL'])
+client = AsyncIOMotorClient(config['DATABASE_URL'])
+db = client[config['MONGO_INITDB_DATABASE']]
+print('Connected to MongoDB')
 
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+db = client.get_database(config['MONGO_INITDB_DATABASE'])
 
-Base.metadata.create_all(bind=engine)
-
-
-def test_database_connection():
-    try:
-
-        session = SessionLocal()
-        result = session.execute(text("SELECT CURRENT_TIMESTAMP"))
-        print("Current time stamp:", result.scalar())
-        session.close()
-        return True
-
-    except Exception as e:
-        print("Error connecting to the database:", str(e))
-        return False
-
-if test_database_connection():
-    print("Database connection successful.")
-else:
-    print("Error connecting to the database.")
+User = db.users
+Teams = db.teams
+ShortenedUrls = db.shortened_urls
