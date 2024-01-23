@@ -31,12 +31,6 @@ project_root
 
 <h3>Setup</h3>
 <ol>
-  <li>
-    <strong>Clone the repository</strong>:
-    <pre><code>git clone https://github.com/yourusername/HIGHREP-TRUMIO-BACKEND.git
-cd highprep-trumio-backend</code></pre>
-  </li>
-  <li>
     <strong>Install dependencies</strong>:
     <pre><code>pip install -r requirements.txt</code></pre>
   </li>
