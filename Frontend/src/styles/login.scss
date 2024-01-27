@@ -1,0 +1,51 @@
+@use 'base';
+
+.login{
+    width: 37vw;
+    height: max-content;
+    border: 2px solid base.$accent;
+    background-color: base.$secondary-color;
+    margin: auto;
+    margin-top: 7vw;
+    text-align: center;
+    padding: 5vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p{
+        padding-bottom: 0.5vw;
+        margin-bottom: 0.5vw;
+    }
+
+    p:first-child{
+        font-size: 2vw;
+        font-weight: bold;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 1vw;
+    }
+
+    input{
+        background-color: base.$accent;
+        color: white;
+        width: 30vw;
+        font-size: 1vw;
+    }
+
+    input[type="text"], input[type="password"]{
+        border:none;
+    }
+
+    input[type="button"]{
+        width: 5vw;
+        margin: 1vw;
+    }
+
+    .link{
+        text-decoration: underline;
+        color: base.$primary-color;
+        padding: 0.5vw;
+    }
+}
