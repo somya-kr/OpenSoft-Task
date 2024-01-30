@@ -1,0 +1,25 @@
+@use "base";
+
+
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 3.3rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.underline {
+    text-decoration: underline;
+}

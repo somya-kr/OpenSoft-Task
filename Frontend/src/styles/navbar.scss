@@ -7,7 +7,8 @@ $navbar-height: 3vw;
   height: $navbar-height;
   background-color: base.$secondary-color;
   border-bottom: 2px solid base.$accent;
-  position: -webkit-sticky; /* Safari */
+  position: -webkit-sticky;
+  /* Safari */
   position: sticky;
 
   p {
