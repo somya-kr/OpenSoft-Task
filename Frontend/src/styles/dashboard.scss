@@ -1,3 +1,5 @@
+@use "base";
+
 .dashboard-wrapper {
     display: flex;
     flex-direction: column;
@@ -11,7 +13,7 @@
         overflow: hidden;
         table-layout: auto;
         border-collapse: collapse;
-        box-shadow: 0px 10px 10px #ccc;
+        box-shadow: 0px 0px 8px 1px #DCD6F7;
         border-radius: 10px;
         white-space: nowrap;
         width: 100em;
@@ -20,7 +22,7 @@
         overflow-x: auto;
 
         thead {
-            background-color: #ccc;
+            background-color: #DCD6F7;
             color: #222;
         }
 
@@ -36,7 +38,7 @@
         }
 
         tbody tr:hover {
-            background-color: #eee;
+            background-color: #424874;
         }
 
         .expand {
