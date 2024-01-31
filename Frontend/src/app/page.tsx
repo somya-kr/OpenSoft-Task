@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Textbox from "../components/textbox/textbox";
+import Dashboard from "../components/dashboard/dashboard";
 import "../styles/page.scss";
 
 export const metadata: Metadata = {
@@ -13,7 +13,7 @@ export default function Page() {
     <div className="page-container">
       <h1 className="underline">Empower your links, Embrace Simplicity.</h1>
       <h2>ZipURL - Where Every Link Finds Its Shortcut</h2>
-      <Textbox />
+      <Dashboard />
     </div>
   );
 }
