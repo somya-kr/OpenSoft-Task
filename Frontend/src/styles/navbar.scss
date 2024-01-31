@@ -1,32 +1,33 @@
-@use 'base';
+@use "base";
 
 $navbar-height: 3vw;
 
-#navbar{
-    width: 100%;
+#navbar {
+  width: 100%;
+  height: $navbar-height;
+  background-color: base.$secondary-color;
+  border-bottom: 2px solid base.$accent;
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+
+  p {
+    float: left;
+    font-size: $navbar-height - 1vw;
+    margin: 0.5vw;
+  }
+
+  div {
+    display: flex;
+    float: right;
+    align-items: center;
+    justify-content: center;
+    width: 5vw;
     height: $navbar-height;
-    background-color: base.$secondary-color;
-    border-bottom: 2px solid base.$accent;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
 
-    p{
-        float: left;
-        font-size: $navbar-height - 1vw;
-        margin: 0.5vw;
+    .link {
+      text-decoration: none;
+      color: base.$primary-color;
     }
-
-    div{
-        display: flex;
-        float: right;
-        align-items: center;
-        justify-content: center;
-        width: 5vw;
-        height: $navbar-height;
-        
-        .link{
-            text-decoration: none;
-            color: base.$primary-color;
-        }
-    }
+  }
 }
