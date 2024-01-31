@@ -49,6 +49,10 @@ const Dashboard = () => {
       .catch((error) => console.log("Error copying to clipboard", error));
   };
 
+  const handleDelete = (index: number) => {
+    setMockData((prev) => prev.filter((_, i) => i !== index));
+  };
+
   const handleShorten = (originalLink) => {
     const newLink = {
       originalLink,
@@ -97,7 +101,10 @@ const Dashboard = () => {
               </td>
               <td>
                 <span className="actions">
-                  <BsFillTrashFill className="delete-btn" />
+                  <BsFillTrashFill
+                    className="delete-btn"
+                    onClick={() => handleDelete(index)}
+                  />
                   {item.copied ? (
                     <LuCopyCheck className="copy-btn" />
                   ) : (
