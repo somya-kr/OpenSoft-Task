@@ -1,3 +1,5 @@
-export default function Page() {
-  return <h1>Teams page goes here</h1>;
+export default function Page(){
+    return(
+        <p style={{margin:'0', padding:'0', textAlign:'center'}}>Select a team</p>
+    )
 }

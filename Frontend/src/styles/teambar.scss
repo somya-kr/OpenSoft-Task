@@ -1,0 +1,53 @@
+@use 'base';
+
+.team-bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: fit-content;
+    margin: 0;
+    background-color: base.$secondary-color;
+    border: 2px solid base.$accent;
+    border-top: none;
+    border-bottom: none;
+    padding-top: 0.8vw;
+    overflow-y: scroll;
+    .team-card{
+        width: 15vw;
+        height: min-content;
+        border: 2px solid base.$accent;
+        border-right: none;
+        border-left: none;
+        margin: 0 0 0.8vw 0;
+        padding: 0.5vw;
+        background-color: base.$secondary-light;
+
+        h2{
+            margin: 0;
+            padding: 0.5vw;
+        }
+
+        p{
+            margin: 0;
+            padding: 0.5vw;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .link{
+            text-decoration: none;
+            color: base.$primary-color;
+        }
+
+        .link:active{
+            background-color: base.$secondary-color;
+        }
+
+        .icon{
+            margin-top: 1vw;
+            margin-bottom: 1vw;
+        }
+    }
+}

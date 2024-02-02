@@ -1,0 +1,48 @@
+@use 'base';
+
+.history{
+    width: 30vw;
+    height: 17vw;
+    background-color: base.$secondary-color;
+    margin: auto;
+    border-radius: 2%/4%;
+    border: 2px solid base.$accent;
+    text-align: center;
+
+    p{
+        margin: 0;
+        padding: 1vw 0 1vw 0;
+    }
+
+    div{
+        margin: 1vw;
+        background-color: base.$secondary-light;
+        height: 11vw;
+        padding: 0;
+        overflow-y: scroll;
+
+        .history-url{
+            border-bottom: 2px solid base.$accent;
+            height: fit-content;
+            margin: 0;
+            padding-left: 1vw;
+            text-align: left;
+
+            h3{
+                font-size: 1.25vw;
+                padding: 0;
+                margin: 0;
+                padding: 0.5vw 0 0.5vw 0;
+                text-align: left;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            p{
+                font-size: 1vw;
+                padding: 0 0 0.2vw 0;
+                margin: 0;
+            }
+        }
+    }
+}

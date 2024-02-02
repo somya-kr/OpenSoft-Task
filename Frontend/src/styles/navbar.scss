@@ -24,10 +24,10 @@ $navbar-height: 3vw;
     justify-content: center;
     width: 5vw;
     height: $navbar-height;
+  }
 
-    .link {
-      text-decoration: none;
-      color: base.$primary-color;
-    }
+  .link {
+    text-decoration: none;
+    color: base.$primary-color;
   }
 }
