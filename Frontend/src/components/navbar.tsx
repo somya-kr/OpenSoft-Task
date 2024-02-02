@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Navbar(params: { logged_in: boolean }) {
   return (
     <div id="navbar">
-      <Link className='link' href={'/home'}><p>ZipURL</p></Link>
+      <Link className='link' href={'/'}><p>ZipURL</p></Link>
       <div>
         <Link className="link" href="/teams">
           Teams
