@@ -16,7 +16,7 @@ export default function Page() {
       <h1 className="underline">Empower your links, Embrace Simplicity.</h1>
       <h2>ZipURL - Where Every Link Finds Its Shortcut</h2>
       <Dashboard /> {/* Keeping the Dashboard component from the 'dashboard' branch */}
-      <Textbox />
+      <Textbox onShorten={undefined} />
       <History agent={'user'} id={0}/>
     </div>
   );
