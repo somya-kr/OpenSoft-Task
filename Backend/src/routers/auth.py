@@ -7,7 +7,6 @@ from src.db import User
 import jwt
 from src.config import config
 router = APIRouter()
-# from bson import ObjectId
 from uuid import uuid4
 
 
@@ -21,7 +20,7 @@ async def signup(request: schemas.SignUPUserSchema):
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="User already exists.")
     
     user = {
-        "id": str(uuid4()),  # Use uuid4 for cryptographically secure random UUID
+        "id": str(uuid4()), 
         "email": request.email.lower(),
         "password": hashed_password,
         "name": request.username,
@@ -69,9 +68,7 @@ async def get_current_user(
         token_data = jwt.decode(token, config["JWT_KEY"], algorithms=["HS256"])
     except jwt.PyJWTError:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token")
-    # print(token_data)
     user = await User.find_one({'id': token_data["user_id"]})
-    # print(user)
     if not user:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
 

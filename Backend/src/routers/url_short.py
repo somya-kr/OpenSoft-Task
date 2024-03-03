@@ -1,12 +1,12 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-# from bson import ObjectId
 from uuid import uuid4
 import shortuuid
 from src.db import ShortenedURL
 from src import schemas
 from src.routers.auth import get_current_user
 from fastapi.responses import RedirectResponse
+from src.config import config
 
 
 router = APIRouter()
@@ -31,7 +31,7 @@ async def shorten_url(request: schemas.URLSchema, current_user: dict = Depends(g
     }
 
     await ShortenedURL.insert_one(shortened_url_data)
-    return ({"shortened_url": f"http://localhost:8000/{short_code}"})
+    return ({"shortened_url": f"{config['BASE_URL']}/{short_code}"})
 
 @router.post("/team/shorten")
 async def shorten_url(request: schemas.TeamURLSchema, current_user: dict = Depends(get_current_user)):
@@ -48,9 +48,9 @@ async def shorten_url(request: schemas.TeamURLSchema, current_user: dict = Depen
         "clicks": 0,
         "team_id": current_user["team_id"]
     }
+    await ShortenedURL.insert_one(shortened_url_data)
+    return ({"shortened_url": f"{config['BASE_URL']}/{short_code}"})
 
-
-    
 
 
 @router.get("/{short_code}")

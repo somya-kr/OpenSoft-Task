@@ -22,5 +22,5 @@ class URLSchema(BaseModel):
     original_url: str
 
 class TeamURLSchema(BaseModel):
-    original_url: HttpUrl
+    original_url: str
     team_id: str
