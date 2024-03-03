@@ -39,10 +39,10 @@ async def signup(request: schemas.SignUPUserSchema):
         "teams": []
     }
 
-    if '_id' in user:
-        del user['_id']
 
     await User.insert_one(user)
+    if '_id' in user:
+        del user['_id']
     return {"message": "User created successfully.", "user": user}
 
 @router.post('/login')

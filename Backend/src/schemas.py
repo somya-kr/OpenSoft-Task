@@ -7,7 +7,7 @@ from pydantic import BaseModel
 
 class LoginUserSchema(BaseModel):
     email: EmailStr
-    password: constr(min_length=8, max_length=128) # type: ignore
+    password: constr(min_length=2, max_length=128) # type: ignore
 
 class SignUPUserSchema(LoginUserSchema):
     username: constr(min_length=2, max_length=50) # type: ignore
