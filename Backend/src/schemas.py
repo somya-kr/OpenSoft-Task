@@ -19,7 +19,7 @@ class ShortenedUrl(BaseModel):
     original_url: str
 
 class URLSchema(BaseModel):
-    original_url: HttpUrl
+    original_url: str
 
 class TeamURLSchema(BaseModel):
     original_url: HttpUrl

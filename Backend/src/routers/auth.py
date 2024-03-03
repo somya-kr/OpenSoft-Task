@@ -10,17 +10,6 @@ router = APIRouter()
 # from bson import ObjectId
 from uuid import uuid4
 
-# def convert_object_id(data):
-#     if isinstance(data, ObjectId):
-#         return str(data)
-#     if isinstance(data, dict):
-#         for key in data:
-#             data[key] = convert_object_id(data[key])
-#     if isinstance(data, list):
-#         for i, item in enumerate(data):
-#             data[i] = convert_object_id(item)
-#     return data
-
 
 @router.post("/signup")
 async def signup(request: schemas.SignUPUserSchema):
@@ -80,8 +69,9 @@ async def get_current_user(
         token_data = jwt.decode(token, config["JWT_KEY"], algorithms=["HS256"])
     except jwt.PyJWTError:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token")
-
-    user = await User.find_one({'user_id': token_data["user_id"]})
+    # print(token_data)
+    user = await User.find_one({'id': token_data["user_id"]})
+    # print(user)
     if not user:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
 

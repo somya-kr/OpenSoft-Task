@@ -5,27 +5,16 @@ from uuid import uuid4
 import shortuuid
 from src.db import ShortenedURL
 from src import schemas
-from routers.auth import get_current_user
-from fastapi import jsonify
+from src.routers.auth import get_current_user
 from fastapi.responses import RedirectResponse
 
 
 router = APIRouter()
 
-# def convert_object_id(data):
-#     if isinstance(data, ObjectId):
-#         return str(data)
-#     if isinstance(data, dict):
-#         for key in data:
-#             data[key] = convert_object_id(data[key])
-#     if isinstance(data, list):
-#         for i, item in enumerate(data):
-#             data[i] = convert_object_id(item)
-#     return data
 
 @router.post("/shorten")
 async def shorten_url(request: schemas.URLSchema, current_user: dict = Depends(get_current_user)):
-    
+    print(current_user)
     existing_short_url = await ShortenedURL.find_one({"original_url": request.original_url})
     if existing_short_url:
         if '_id' in existing_short_url:
@@ -42,7 +31,7 @@ async def shorten_url(request: schemas.URLSchema, current_user: dict = Depends(g
     }
 
     await ShortenedURL.insert_one(shortened_url_data)
-    return jsonify({"shortened_url": f"http://localhost:8000/{short_code}"})
+    return ({"shortened_url": f"http://localhost:8000/{short_code}"})
 
 @router.post("/team/shorten")
 async def shorten_url(request: schemas.TeamURLSchema, current_user: dict = Depends(get_current_user)):
@@ -101,5 +90,5 @@ async def delete_url(short_code: str, current_user: dict = Depends(get_current_u
     if url["user_id"] != current_user["id"]:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Unauthorized")
     await ShortenedURL.delete_one({"short_code": short_code})
-    return jsonify({"message": "URL deleted successfully"})
+    return ({"message": "URL deleted successfully"})
 
