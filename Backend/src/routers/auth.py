@@ -7,19 +7,19 @@ from src.db import User
 import jwt
 from src.config import config
 router = APIRouter()
-from bson import ObjectId
+# from bson import ObjectId
 from uuid import uuid4
 
-def convert_object_id(data):
-    if isinstance(data, ObjectId):
-        return str(data)
-    if isinstance(data, dict):
-        for key in data:
-            data[key] = convert_object_id(data[key])
-    if isinstance(data, list):
-        for i, item in enumerate(data):
-            data[i] = convert_object_id(item)
-    return data
+# def convert_object_id(data):
+#     if isinstance(data, ObjectId):
+#         return str(data)
+#     if isinstance(data, dict):
+#         for key in data:
+#             data[key] = convert_object_id(data[key])
+#     if isinstance(data, list):
+#         for i, item in enumerate(data):
+#             data[i] = convert_object_id(item)
+#     return data
 
 
 @router.post("/signup")
@@ -38,8 +38,12 @@ async def signup(request: schemas.SignUPUserSchema):
         "name": request.username,
         "teams": []
     }
+
+    if '_id' in user:
+        del user['_id']
+
     await User.insert_one(user)
-    return {"message": "User created successfully.", "user": convert_object_id(user)}
+    return {"message": "User created successfully.", "user": user}
 
 @router.post('/login')
 async def login(payload: schemas.LoginUserSchema):
