@@ -1,7 +1,5 @@
 import "../styles/navbar.scss";
-
 import Link from "next/link";
-
 export default function Navbar(params: { logged_in: boolean }) {
   return (
     <div id="navbar">
@@ -14,7 +12,7 @@ export default function Navbar(params: { logged_in: boolean }) {
       <div>
         {params.logged_in ? (
           <Link className="link" href="/profile">
-            Profile
+             Profile
           </Link>
         ) : (
           <Link className="link" href="/login">
@@ -25,3 +23,5 @@ export default function Navbar(params: { logged_in: boolean }) {
     </div>
   );
 }
+
+

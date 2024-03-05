@@ -6,3 +6,5 @@ export default function HistoryURL(props: {url:string, shortened_url: string}){
         </div>
     );
 }
+
+

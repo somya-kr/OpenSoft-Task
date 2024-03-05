@@ -15,4 +15,7 @@ export default function SignUpPrompt() {
             <Link className='link' href={'/login'}>Login</Link>
         </div>
     )
-  }
+}
+
+
+

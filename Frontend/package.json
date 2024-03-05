@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "@mantine/core": "^7.6.1",
+    "@mantine/hooks": "^7.6.1",
     "i": "^0.3.7",
     "next": "^14.1.0",
     "react": "^18.2.0",
@@ -15,6 +17,9 @@
   "devDependencies": {
     "@types/node": "20.11.5",
     "@types/react": "18.2.48",
+    "postcss": "^8.4.35",
+    "postcss-preset-mantine": "^1.13.0",
+    "postcss-simple-vars": "^7.0.1",
     "sass": "^1.70.0",
     "typescript": "^5.3.3"
   }

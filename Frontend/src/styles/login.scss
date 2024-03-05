@@ -1,51 +1,74 @@
 @use 'base';
+  
 
-.login{
-    width: 37vw;
-    height: max-content;
-    border: 2px solid base.$accent;
-    background-color: base.$secondary-color;
-    margin: auto;
-    margin-top: 7vw;
-    text-align: center;
-    padding: 5vw;
+.login {
+  max-width: 37vw;
+  width: 400px; /* Setting a fixed width for consistency */
+  height: max-content;
+  border: 2px solid #007bff; /* Assuming this is your base.$accent color */
+  border-radius: 5px;
+  background-color: #f9f9f9; /* Assuming this is your base.$secondary-color */
+  margin: auto;
+  margin-top: 7vw;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-    p{
-        padding-bottom: 0.5vw;
-        margin-bottom: 0.5vw;
-    }
 
-    p:first-child{
-        font-size: 2vw;
-        font-weight: bold;
-        padding: 0;
-        margin: 0;
-        margin-bottom: 1vw;
-    }
 
-    input{
-        background-color: base.$accent;
-        color: white;
-        width: 30vw;
-        font-size: 1vw;
-    }
+.login p {
+  font-size: 2vw;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1vw;
+  border-radius:10px;
+  
 
-    input[type="text"], input[type="password"]{
-        border:none;
-    }
+}
 
-    input[type="button"]{
-        width: 5vw;
-        margin: 1vw;
-    }
+.login input[type="text"],
+.login input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 1px solid #ccc; /* Adding a bottom border for text inputs */
+  box-sizing: border-box;
+  background-color: #007bff; /* Assuming this is your base.$accent color */
+  color: white;
+  font-size: 1vw;
+}
 
-    .link{
-        text-decoration: underline;
-        color: base.$primary-color;
-        padding: 0.5vw;
-    }
+.login input[type="button"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login input[type="button"]:hover {
+  background-color: #0056b3;
+}
+
+.login .link {
+  text-decoration: underline;
+  color: #007bff;
+  padding: 0.5vw;
+  display: block;
+  margin-top: 10px;
+}
+
+.login .link:hover {
+  color: #0056b3;
 }

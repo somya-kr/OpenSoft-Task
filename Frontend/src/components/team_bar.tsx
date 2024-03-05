@@ -9,3 +9,5 @@ export default function TeamBar(prop: {teams: {team_id: number, team_name: strin
         </div>
     )
 }
+
+

@@ -15,3 +15,6 @@ export default function History(props: { agent:'user'|'team', id: number}){
         </div>
     );
 }
+
+
+
